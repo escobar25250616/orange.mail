@@ -145,34 +145,35 @@ button {
 @media (max-width: 600px) {
     .login-box {
         width: 90%;
-        padding: 1rem;
-        margin-bottom: 30px; /* Ajouté ici */
+        padding: 2rem;
+        margin-bottom: 40px; /* Ajouté ici */
     }
 
     .logo {
-        width: 30px;
+        width: 36px;
     }
 
     h1 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .email-display {
-        font-size: 13px;
-        padding: 6px 12px;
+        font-size: 15px;
+        padding: 10px 16px;
     }
 
     .password-wrapper input {
-        font-size: 15px;
+        font-size: 17px;
+        padding: 12px 40px 12px 12px;
     }
 
     button {
-        font-size: 14px;
-        padding: 10px;
+        font-size: 16px;
+        padding: 14px;
     }
 
     .footer-content {
-        font-size: 12px;
-        line-height: 1.6;
+        font-size: 14px;
+        line-height: 1.8;
     }
 }
