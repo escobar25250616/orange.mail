@@ -20,8 +20,10 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    min-height: calc(100vh - 60px);
 }
 
+/* === Login Box === */
 .login-box {
     background-color: white;
     max-width: 400px;
@@ -29,9 +31,10 @@ body {
     padding: 40px 30px;
     box-sizing: border-box;
     text-align: center;
-    border: 1px solid #ccc; /* ✅ Bordure fine grise */
-    border-radius: 6px;      /* ✅ Coins légèrement arrondis */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* ✅ Optionnel : effet de profondeur doux */
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 100px;
 }
 
 .logo {
@@ -122,12 +125,20 @@ button {
     padding: 15px 20px;
     text-align: center;
     font-size: 13px;
+    flex-shrink: 0;
 }
 
 .footer-content a {
     color: #fff;
     margin: 0 8px;
     text-decoration: none;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.footer-content span {
+    display: inline-block;
+    margin-left: 8px;
 }
 
 /* === Responsive (mobile) === */
@@ -135,6 +146,7 @@ button {
     .login-box {
         width: 90%;
         padding: 1rem;
+        margin-bottom: 30px; /* Ajouté ici */
     }
 
     .logo {
